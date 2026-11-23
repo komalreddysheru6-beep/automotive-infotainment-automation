@@ -7,3 +7,12 @@ __pycache__/
 .env
 reports/*.html
 logs/
+
+# Python generated files
+__pycache__/
+*.pyc
+.pytest_cache/
+venv/
+
+# Generated automation reports and device data
+reports/
