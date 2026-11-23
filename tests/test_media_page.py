@@ -1,9 +1,15 @@
 
 from unittest.mock import patch
 from pages.media_page import MediaPage
+from utils.logger import get_logger
+
 
 
 def test_play_music(mock_driver):
+    logger = get_logger("MediaPage")
+
+    logger.info("Starting Play Music unit test")
+
     page = MediaPage(mock_driver)
 
     with patch.object(page, "click") as mock_click:
@@ -12,6 +18,9 @@ def test_play_music(mock_driver):
     mock_click.assert_called_once_with(
         MediaPage.PLAY_BUTTON
     )
+
+    logger.info("Play Music unit test passed")
+
 
 
 def test_pause_music(mock_driver):
