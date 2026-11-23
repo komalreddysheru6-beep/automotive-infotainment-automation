@@ -1,11 +1,10 @@
 
-from unittest.mock import MagicMock, patch
-
+from unittest.mock import patch
 from pages.media_page import MediaPage
 
 
-def test_play_music():
-    page = MediaPage(MagicMock())
+def test_play_music(mock_driver):
+    page = MediaPage(mock_driver)
 
     with patch.object(page, "click") as mock_click:
         page.play_music()
@@ -15,8 +14,8 @@ def test_play_music():
     )
 
 
-def test_pause_music():
-    page = MediaPage(MagicMock())
+def test_pause_music(mock_driver):
+    page = MediaPage(mock_driver)
 
     with patch.object(page, "click") as mock_click:
         page.pause_music()
@@ -26,8 +25,8 @@ def test_pause_music():
     )
 
 
-def test_next_track():
-    page = MediaPage(MagicMock())
+def test_next_track(mock_driver):
+    page = MediaPage(mock_driver)
 
     with patch.object(page, "click") as mock_click:
         page.next_track()
@@ -37,8 +36,8 @@ def test_next_track():
     )
 
 
-def test_previous_track():
-    page = MediaPage(MagicMock())
+def test_previous_track(mock_driver):
+    page = MediaPage(mock_driver)
 
     with patch.object(page, "click") as mock_click:
         page.previous_track()

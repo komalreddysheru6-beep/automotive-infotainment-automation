@@ -1,10 +1,10 @@
 
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
 from pages.navigation_page import NavigationPage
 
 
-def test_open_search():
-    page = NavigationPage(MagicMock())
+def test_open_search(mock_driver):
+    page = NavigationPage(mock_driver)
 
     with patch.object(page, "click") as mock_click:
         page.open_search()
@@ -14,8 +14,8 @@ def test_open_search():
     )
 
 
-def test_enter_destination():
-    page = NavigationPage(MagicMock())
+def test_enter_destination(mock_driver):
+    page = NavigationPage(mock_driver)
 
     with patch.object(page, "enter_text") as mock_enter:
         page.enter_destination("Hyderabad")
@@ -26,8 +26,8 @@ def test_enter_destination():
     )
 
 
-def test_start_navigation():
-    page = NavigationPage(MagicMock())
+def test_start_navigation(mock_driver):
+    page = NavigationPage(mock_driver)
 
     with patch.object(page, "click") as mock_click:
         page.start_navigation()
@@ -37,8 +37,8 @@ def test_start_navigation():
     )
 
 
-def test_stop_navigation():
-    page = NavigationPage(MagicMock())
+def test_stop_navigation(mock_driver):
+    page = NavigationPage(mock_driver)
 
     with patch.object(page, "click") as mock_click:
         page.stop_navigation()

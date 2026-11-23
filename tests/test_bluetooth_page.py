@@ -1,10 +1,10 @@
 
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
 from pages.bluetooth_page import BluetoothPage
 
 
-def test_toggle_bluetooth():
-    page = BluetoothPage(MagicMock())
+def test_toggle_bluetooth(mock_driver):
+    page = BluetoothPage(mock_driver)
 
     with patch.object(page, "click") as mock_click:
         page.toggle_bluetooth()
@@ -14,8 +14,8 @@ def test_toggle_bluetooth():
     )
 
 
-def test_search_devices():
-    page = BluetoothPage(MagicMock())
+def test_search_devices(mock_driver):
+    page = BluetoothPage(mock_driver)
 
     with patch.object(page, "click") as mock_click:
         page.search_devices()
@@ -25,8 +25,8 @@ def test_search_devices():
     )
 
 
-def test_connect_device():
-    page = BluetoothPage(MagicMock())
+def test_connect_device(mock_driver):
+    page = BluetoothPage(mock_driver)
 
     with patch.object(page, "click") as mock_click:
         page.connect_device()
@@ -36,8 +36,8 @@ def test_connect_device():
     )
 
 
-def test_disconnect_device():
-    page = BluetoothPage(MagicMock())
+def test_disconnect_device(mock_driver):
+    page = BluetoothPage(mock_driver)
 
     with patch.object(page, "click") as mock_click:
         page.disconnect_device()
