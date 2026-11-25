@@ -1,3 +1,4 @@
+import os
 
 from pathlib import Path
 
@@ -10,7 +11,7 @@ def test_spotify_player_xml():
 
     options.platform_name = "Android"
     options.automation_name = "UiAutomator2"
-    options.udid = "R52Y705H82J"
+    options.udid = os.environ["ANDROID_UDID"]
     options.set_capability("appium:noReset", True)
 
     driver = None

@@ -16,3 +16,6 @@ venv/
 
 # Generated automation reports and device data
 reports/
+
+# Local device screenshots
+screenshots/

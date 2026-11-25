@@ -1,10 +1,11 @@
+import os
 
 from pages.android_bluetooth_page import AndroidBluetoothPage
 
 
 def test_bluetooth_enabled_using_pom():
     bluetooth_page = AndroidBluetoothPage(
-        device_id="R52Y705H82J"
+        device_id=os.environ["ANDROID_UDID"]
     )
 
     assert bluetooth_page.is_bluetooth_enabled(), (

@@ -1,3 +1,4 @@
+import os
 
 import subprocess
 
@@ -15,7 +16,7 @@ def test_bluetooth_ui_elements():
     options = UiAutomator2Options()
     options.platform_name = "Android"
     options.automation_name = "UiAutomator2"
-    options.udid = "R52Y705H82J"
+    options.udid = os.environ["ANDROID_UDID"]
 
     options.set_capability("appium:noReset", True)
     options.set_capability("appium:forceAppLaunch", False)
@@ -36,7 +37,7 @@ def test_bluetooth_ui_elements():
         # Step 3: Open Bluetooth Settings
         subprocess.run(
             [
-                "adb", "-s", "R52Y705H82J",
+                "adb", "-s", os.environ["ANDROID_UDID"],
                 "shell", "am", "start",
                 "-a", "android.settings.BLUETOOTH_SETTINGS"
             ],
@@ -45,7 +46,7 @@ def test_bluetooth_ui_elements():
         )
 
         # Step 4: Initialize Bluetooth Page Object
-        bluetooth = AndroidBluetoothPage("R52Y705H82J")
+        bluetooth = AndroidBluetoothPage(os.environ["ANDROID_UDID"])
 
         # Step 5: Inspect current Android activity
         print("Current activity:", driver.current_activity)

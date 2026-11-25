@@ -1,3 +1,4 @@
+import os
 
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
@@ -9,7 +10,7 @@ def test_samsung_connection():
     options.platform_name = "Android"
     options.automation_name = "UiAutomator2"
     options.device_name = "Samsung Galaxy Tab S10 FE+"
-    options.udid = "R52Y705H82J"
+    options.udid = os.environ["ANDROID_UDID"]
 
     options.set_capability("appium:noReset", True)
     options.set_capability("appium:newCommandTimeout", 120)

@@ -1,3 +1,4 @@
+import os
 
 from pathlib import Path
 
@@ -9,7 +10,7 @@ def test_bluetooth_ui_xml():
     options = UiAutomator2Options()
     options.platform_name = "Android"
     options.automation_name = "UiAutomator2"
-    options.udid = "R52Y705H82J"
+    options.udid = os.environ["ANDROID_UDID"]
     options.set_capability("appium:noReset", True)
     options.set_capability("appium:forceAppLaunch", False)
     options.set_capability("appium:dontStopAppOnReset", True)

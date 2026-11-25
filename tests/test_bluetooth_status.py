@@ -1,8 +1,9 @@
+import os
 
 import subprocess
 
 
-DEVICE_ID = "R52Y705H82J"
+DEVICE_ID = os.environ["ANDROID_UDID"]
 
 
 def test_bluetooth_enabled():

@@ -37,7 +37,7 @@ def test_navigation_custom():
     while not destination:
         destination = input("Enter a valid destination: ").strip()
 
-    device_id = "R52Y705H82J"
+    device_id = os.environ["ANDROID_UDID"]
     package = "com.google.android.apps.maps"
 
     options = UiAutomator2Options()

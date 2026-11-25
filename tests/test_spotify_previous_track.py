@@ -1,3 +1,5 @@
+import os
+import pytest
 
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
@@ -5,12 +7,15 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 from pages.spotify_media_page import SpotifyMediaPage
 
-
+@pytest.mark.skipif(
+    os.getenv("SPOTIFY_PREMIUM") != "1",
+    reason="Previous track requires a verified unrestricted playback account"
+)
 def test_spotify_previous_track():
     options = UiAutomator2Options()
     options.platform_name = "Android"
     options.automation_name = "UiAutomator2"
-    options.udid = "R52Y705H82J"
+    options.udid = os.environ["ANDROID_UDID"]
     options.set_capability("appium:noReset", True)
 
     driver = None

@@ -1,3 +1,4 @@
+import os
 
 from pathlib import Path
 
@@ -11,7 +12,7 @@ def test_samsung_screenshot():
     options.platform_name = "Android"
     options.automation_name = "UiAutomator2"
     options.device_name = "Samsung Galaxy Tab S10 FE+"
-    options.udid = "R52Y705H82J"
+    options.udid = os.environ["ANDROID_UDID"]
 
     options.set_capability("appium:noReset", True)
 

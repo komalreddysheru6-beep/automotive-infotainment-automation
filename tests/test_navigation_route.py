@@ -1,3 +1,4 @@
+import os
 
 from pathlib import Path
 
@@ -15,7 +16,7 @@ def test_navigation_route():
     options = UiAutomator2Options()
     options.platform_name = "Android"
     options.automation_name = "UiAutomator2"
-    options.udid = "R52Y705H82J"
+    options.udid = os.environ["ANDROID_UDID"]
 
     options.set_capability("appium:noReset", True)
     options.set_capability("appium:skipDeviceInitialization", True)

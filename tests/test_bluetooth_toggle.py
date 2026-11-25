@@ -1,8 +1,9 @@
+import os
 
 import subprocess
 import time
 
-DEVICE_ID = "R52Y705H82J"
+DEVICE_ID = os.environ["ANDROID_UDID"]
 
 
 def adb_command(*args):

@@ -1,3 +1,4 @@
+import os
 
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
@@ -7,7 +8,7 @@ def test_samsung_ui_elements():
     options = UiAutomator2Options()
     options.platform_name = "Android"
     options.automation_name = "UiAutomator2"
-    options.udid = "R52Y705H82J"
+    options.udid = os.environ["ANDROID_UDID"]
     options.set_capability("appium:noReset", True)
 
     driver = None
